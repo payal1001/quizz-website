@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login_form_container">
+        <div class="login_form">
+            <h2>Log In</h2>
+    <div clasx="main">
+        <div class="signup">
+            <form>
+                Name:<input type="text" placeholder="enter your name" id="name" required>
+                Phone no:<input type="number" placeholder="number" id="contactno" required>
+                Email:<input type="email" placeholder="xyz@gmail.com" id="email" required>
+                Password:<input type="password" placeholder="password" id="password" required>
+                <button value="Submit" id="btnn">SUBMIT</button>
+            </form>
+
+        </div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+  apiKey: "AIzaSyAq2zQejMWp8pa0HexAj-OxMGOrh7h3Xis",
+  authDomain: "quix-e0b79.firebaseapp.com",
+  projectId: "quix-e0b79",
+  storageBucket: "quix-e0b79.appspot.com",
+  messagingSenderId: "247100652755",
+  appId: "1:247100652755:web:1f7f467714bda86f00e826"
+};
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+
+        btnn.addEventListener('click', (e) => {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+
+                    const user = userCredential.user;
+
+                    const dt = new Date();
+                    update(ref(database, 'users/' + user.uid), {
+                        last_login: dt,
+
+                    })
+
+
+                    alert('User loged in!');
+
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    alert(errorMessage);
+
+                });
+        })  
+</script>
+</body>
+<script>
+    function nextpage(){
+        window.location.href="http://127.0.0.1:5500/page1.html"
+    }
+
+    document.getElementById('btnn').addEventListener("click" ,nextpage)
+</script>
+</html>

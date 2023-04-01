@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+
+<body>
+    <div class="login_form_container">
+        <div class="login_form">
+            <h2>Sign Up</h2>
+    <div clasx="main">
+        <div class="signup">
+            <form>
+                
+            Name:<input type="text" placeholder="Enter your name" id="name" required>
+            Number:<input type="Number" placeholder="Number" id="contactno" required>
+            Email:<input type="email" placeholder="Email" id="email" required>
+            Password:<input type="password" placeholder="Password" id="password" required>
+                <button value="Submit" id="btnn"  target="_blank"> &nbsp;&nbsp;SUBMIT&nbsp;&nbsp;</button>
+            </form>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyAq2zQejMWp8pa0HexAj-OxMGOrh7h3Xis",
+            authDomain: "quix-e0b79.firebaseapp.com",
+            projectId: "quix-e0b79",
+            storageBucket: "quix-e0b79.appspot.com",
+            messagingSenderId: "247100652755",
+            appId: "1:247100652755:web:1f7f467714bda86f00e826"
+        };
+
+        
+
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+        btnn.addEventListener('click', (e) => {
+
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var number = document.getElementById('contactno').value;
+            var name = document.getElementById('name').value;
+
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    set(ref(database, 'users/' + user.uid), {
+                        number: number,
+                        name: name,
+                        email: email
+                    })
+                    alert('user created')
+
+                    newpage()
+
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    // ..
+
+                })
+        })
+        function nextpage(){
+        window.location.href="http://127.0.0.1:5500/page1.html"
+    }
+
+    document.getElementById('btnn').addEventListener("click" ,nextpage)
+</script>
+
+</body>
+<script>
+function nextpage(){
+    window.location.href="http://127.0.0.1:5500/page1.html"
+}
+
+document.getElementById('btnn').addEventListener("click" ,nextpage)
+</script>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Page</title>
+	<link rel="stylesheet" type="text/css" href="hbo.css">
+</head>
+<body>
+	<div class="preloader">
+        <img src="https://i.pinimg.com/originals/a8/d5/ba/a8d5baeb06fc12c77ccefd0121010d20.gif" alt="loading...">
+    </div>
+	<header>
+		<h1>THE ULTIMATE AVENGERS QUIZ!</h1>
+	</header>
+	<!--<img class="background" src="https://cdn.britannica.com/60/182360-050-CD8878D6/Avengers-Age-of-Ultron-Joss-Whedon.jpg" alt="Aleq">-->
+
+	<main>
+		<form id="quiz-form" method="post">	
+			<div class="hhhh">The Ultimate avengers Quiz. Are you an Avengers know-it-all? Thor's hammer! You are? Why don't you prove it by taking this suitably epic quiz? &#128540</div>
+			<div id="timer">TIME LEFT:  <span id="countdown">30s</span></div>
+			<h2>Question 1:</h2>
+			<p>Whose nickname is "MURDER BOT"?</p>
+			<label>
+				<input type="checkbox" name="q1" value="a">
+				a) Iron Man
+			</label>
+			<label>
+				<input type="checkbox" name="q1" value="b">
+				b) Vision 
+			</label>
+			<label>
+				<input type="checkbox" name="q1" value="c">
+				c) Hulk Buster
+			</label>
+			<label>
+				<input type="checkbox" name="q1" value="d">
+				d) Ultron
+			</label>
+
+			<h2>Question 2:</h2>
+			<p>Vision is a..... What?</p>
+			<label>
+				<input type="checkbox" name="q2" value="a">
+				a) Alien
+			</label>
+			<label>
+				<input type="checkbox" name="q2" value="b">
+				b) Ghost
+			</label>
+			<label>
+				<input type="checkbox" name="q2" value="c">
+				c) Android
+			</label>
+			<label>
+				<input type="checkbox" name="q2" value="d">
+				d)Famous artist
+			</label>
+
+            <h2>Question 3:</h2>
+			<p>Who is Loki's adoptive brother?</p>
+			<label>
+				<input type="checkbox" name="q3" value="a">
+				a) Thor
+			</label>
+			<label>
+				<input type="checkbox" name="q3" value="b">
+				b) Tony Stark
+			</label>
+			<label>
+				<input type="checkbox" name="q3" value="c">
+				c) Peter Parker
+			</label>
+			<label>
+				<input type="checkbox" name="q3" value="d">
+				d)Bruce Wayner
+			</label>
+
+			<h2>Question 4:</h2>
+			<p>How does Black Widow turn the hulk back into Bruce Banner?</p>
+			<label>
+				<input type="checkbox" name="q4" value="a">
+				a) By asking politely
+			</label>
+			<label>
+				<input type="checkbox" name="q4" value="b">
+				b) With a special potion
+			</label>
+			<label>
+				<input type="checkbox" name="q4" value="c">
+				c) With a lullaby
+			</label>
+			<label>
+				<input type="checkbox" name="q4" value="d">
+				d) With a text message
+			</label>
+
+			<h2>Question 5:</h2>
+			<p>In Avengers: Age of Ultron, what is the name of the villain who wants to destroy Earth?</p>
+			<label>
+				<input type="checkbox" name="q5" value="a">
+				a) Green Goblin
+			</label>
+			<label>
+				<input type="checkbox" name="q5" value="b">
+				b) Ultron
+			</label>
+			<label>
+				<input type="checkbox" name="q5" value="c">
+				c) The Penguin
+			</label>
+			<label>
+				<input type="checkbox" name="q5" value="d">
+				d)The Joker
+			</label>
+
+			<input type="submit" value="Submit" id="submit-button">
+		</form>
+
+		<div class="results">
+			<h2>Results:</h2>
+			<p>Question 1: <span id="q1result"></span></p>
+			<p>Question 2: <span id="q2result"></span></p>
+			<p>Question 3: <span id="q3result"></span></p>
+			<p>Question 4: <span id="q4result"></span></p>
+			<p>Question 5: <span id="q5result"></span></p>
+			
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Quiz Page</p>
+	</footer>
+
+	<script src="hbo.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3T's ThinkTankTrivia</title>
+<link rel="stylesheet" href="homepage.css">
+<style>
+    .imageone{
+        position: absolute;
+        top:150px ;
+        left:650px;
+        width:150px;
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="welcome-text">
+        <h1>welcome</h1>
+        <h5>Excited for quizzing!!!!</h5>
+        
+        <button><a href="signup yt2.html">&nbsp;Sign Up&nbsp;</a></button>
+        <button><a href="signup yt.html">&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</a></button>
+        </div>
+    <p id="logo">ThinkTankTrivia</p>
+</header>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+
+    import { getAuth, get, set, ref } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDvWmqAvJcEdcsE4LXl3v0gp5eUxyoBaU0",
+      authDomain: "quiz-app-6dfe2.firebaseapp.com",
+      projectId: "quiz-app-6dfe2",
+      storageBucket: "quiz-app-6dfe2.appspot.com",
+      messagingSenderId: "67857361121",
+      appId: "1:67857361121:web:6ceeb4d72ded82c23d6fa0",
+      measurementId: "G-GT42G3TK12"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+
+
+
+
+  </script> 
+    
+</body>
+</html>
